@@ -9,7 +9,6 @@ import "fmt"
 //        --funds <funds>            Path to the csv containing funds information
 //        --proposals <proposals>    Path to the csv containing proposals information
 //        --voteplans <voteplans>    Path to the csv containing voteplans information
-
 func CsvDataLoad(
 	dbURL string,
 	funds string,

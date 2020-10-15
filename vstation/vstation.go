@@ -43,9 +43,9 @@ type Vstation struct {
 	} `json:"tls"`
 
 	// Extra
-	WorkingDir string
-	Stdout     io.Writer
-	Stderr     io.Writer
+	WorkingDir string    `json:"-"`
+	Stdout     io.Writer `json:"-"`
+	Stderr     io.Writer `json:"-"`
 	// internal usage
 	cmd  *exec.Cmd
 	done chan struct{}

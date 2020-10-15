@@ -51,8 +51,8 @@ type Vstation struct {
 	done chan struct{}
 }
 
-// NewJnode returns a Jnode with some defaults.
-func NewJnode() *Vstation {
+// NewVstation returns a Vstation with some defaults.
+func NewVstation() *Vstation {
 	return &Vstation{
 		WorkingDir: os.TempDir(),
 		Stdout:     os.Stdout,

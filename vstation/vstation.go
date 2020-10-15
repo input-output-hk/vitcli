@@ -9,6 +9,7 @@ import (
 	"os/exec"
 	"os/signal"
 	"strconv"
+	"strings"
 	"syscall"
 	"time"
 )
@@ -101,9 +102,7 @@ func (vstation *Vstation) BuildCmdArg() []string {
 	}
 
 	if len(vstation.Cors.AllowedOrigins) > 0 {
-		for i := range vstation.Cors.AllowedOrigins {
-			arg = append(arg, "--allowed-origins", vstation.Cors.AllowedOrigins[i])
-		}
+		arg = append(arg, "--allowed-origins", strings.Join(vstation.Cors.AllowedOrigins, ","))
 	}
 
 	return arg

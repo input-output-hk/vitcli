@@ -102,7 +102,7 @@ func (vstation *Vstation) BuildCmdArg() []string {
 	}
 
 	if len(vstation.Cors.AllowedOrigins) > 0 {
-		arg = append(arg, "--allowed-origins", strings.Join(vstation.Cors.AllowedOrigins, ","))
+		arg = append(arg, "--allowed-origins", strings.Join(vstation.Cors.AllowedOrigins, ";"))
 	}
 
 	return arg

@@ -8,11 +8,13 @@ import "fmt"
 //        --db-url <db-url>          URL of the vit-servicing-station database to interact with
 //        --funds <funds>            Path to the csv containing funds information
 //        --proposals <proposals>    Path to the csv containing proposals information
+//        --challenges <challenges>  Path to the csv containing challenges information
 //        --voteplans <voteplans>    Path to the csv containing voteplans information
 func CsvDataLoad(
 	dbURL string,
 	funds string,
 	proposals string,
+	challenges string,
 	voteplans string,
 ) ([]byte, error) {
 	if dbURL == "" {
@@ -24,6 +26,9 @@ func CsvDataLoad(
 	if proposals == "" {
 		return nil, fmt.Errorf("parameter missing : %s", "proposals")
 	}
+	if challenges == "" {
+		return nil, fmt.Errorf("parameter missing : %s", "challenges")
+	}
 	if voteplans == "" {
 		return nil, fmt.Errorf("parameter missing : %s", "voteplans")
 	}
@@ -32,6 +37,7 @@ func CsvDataLoad(
 		"--db-url", dbURL,
 		"--funds", funds,
 		"--proposals", proposals,
+		"--challenges", challenges,
 		"--voteplans", voteplans,
 	}
 

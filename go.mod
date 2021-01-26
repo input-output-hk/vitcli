@@ -1,3 +1,3 @@
-module github.com/rinor/vitcli
+module github.com/input-output-hk/vitcli
 
-go 1.14
+go 1.15
